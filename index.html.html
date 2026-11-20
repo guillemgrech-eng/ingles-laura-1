@@ -1,0 +1,2350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="tool">
+  <meta name="design-style" content="sticker">
+  <title>Misión Animal Kingdom · Autoevaluación de Inglés (3º Primaria)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces (Sticker style) */
+      --background: #fef7ff;
+      --surface-container-low: #ffffff;
+      --surface-container: #f8eef8;
+      --surface-container-high: #f2e8f2;
+
+      /* Ink */
+      --on-surface: #2e1a28;
+      --on-surface-variant: #604868;
+
+      /* Rules */
+      --outline: #907898;
+      --outline-variant: #dcc8e0;
+
+      /* Accents */
+      --primary: #c2207f;
+      --on-primary: #ffffff;
+      --primary-container: #f080c0;
+      --on-primary-container: #2e1a28;
+      --secondary: #7c52aa;
+      --on-secondary: #ffffff;
+      --secondary-container: #ece2f8;
+      --tertiary: #0096cc;
+      --tertiary-container: #dff5fc;
+      --error: #c53030;
+      --on-error: #ffffff;
+      --error-container: #fde8e8;
+
+      /* Data series */
+      --data-1: #c2207f;
+      --data-2: #7c52aa;
+      --data-3: #0096cc;
+      --data-4: #d96a00;
+      --data-context: #c8b8d0;
+
+      /* Fonts */
+      --font-headline: 'DM Sans', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-label: 'DM Sans', sans-serif;
+
+      /* Shape */
+      --rounded: 1rem;
+      --rounded-lg: 2rem;
+      --rounded-full: 9999px;
+
+      /* Style effects */
+      --shadow-pink: 0 4px 16px rgb(224 64 160 / 0.2);
+      --shadow-pink-deep: 0 10px 28px rgb(224 64 160 / 0.32);
+      --shadow-grape: 0 4px 16px rgb(124 82 170 / 0.2);
+      --shadow-grape-deep: 0 10px 26px rgb(124 82 170 / 0.3);
+      --shadow-sky: 0 4px 16px rgb(0 150 204 / 0.2);
+      --shadow-positive: 0 4px 16px rgb(21 128 61 / 0.18);
+      --pop-scale: scale(1.03);
+      --lift: translateY(-4px);
+      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      /* Shared semantic tokens */
+      --positive: #15803d;
+      --on-positive: #ffffff;
+      --positive-container: #dcfce7;
+      --warning: #b45309;
+      --warning-container: #fef3c7;
+      --focus: var(--primary);
+
+      /* Animal illustration palette tokens */
+      --animal-green: #22a06b;
+      --animal-green-dark: #15734b;
+      --animal-gold: #f59e0b;
+      --animal-gold-light: #fde68a;
+      --animal-brown: #b45309;
+      --animal-brown-light: #e7b583;
+      --animal-slate: #64748b;
+      --animal-slate-light: #cbd5e1;
+      --animal-coral: #e11d48;
+      --animal-teal: #0d9488;
+      --animal-cream: #fffbeb;
+      --animal-highlight: #c2207f;
+
+      /* Type scale (Focused Tool) */
+      --display-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.35rem);
+      --headline-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+      --subhead-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+      --body-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+      --label-size: 0.75rem;
+
+      /* Spacing scale (4pt base) */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+      --space-3xl: 6rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-long: 420ms;
+    }
+
+    /* Base reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    header { position: static !important; }
+    button, input, select, textarea { font-family: inherit; }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .page-grid {
+      display: grid;
+      gap: var(--space-lg);
+      padding: var(--space-lg);
+      max-width: 1120px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .page-grid * { min-width: 0; }
+
+    /* Typography helpers */
+    .display {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: var(--display-size);
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .display em {
+      font-style: normal;
+      color: var(--primary);
+    }
+
+    .section-title {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: var(--headline-size);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--on-surface);
+      margin: 0;
+    }
+
+    .label-kicker {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--on-surface-variant);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Hero & Scoreboard Header */
+    .hero-panel {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-pink);
+      padding: var(--space-xl);
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: var(--space-lg);
+      align-items: center;
+    }
+
+    .hero-intro {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      align-items: flex-start;
+    }
+
+    .hero-subtitle {
+      margin: 0;
+      color: var(--on-surface-variant);
+      font-size: var(--subhead-size);
+      max-width: 58ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-top: var(--space-xs);
+    }
+
+    /* Scoreboard Cluster */
+    .scoreboard-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+
+    .stat-card {
+      background: var(--surface-container);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .stat-card--wide {
+      grid-column: 1 / -1;
+    }
+
+    .stat-value {
+      font-weight: 900;
+      font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.75rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .stat-value--grape {
+      color: var(--secondary);
+    }
+
+    .stat-caption {
+      font-size: 0.85rem;
+      color: var(--on-surface-variant);
+      font-weight: 500;
+    }
+
+    /* Lollipop Progress Bar */
+    .progress-track {
+      width: 100%;
+      height: 14px;
+      background: var(--surface-container-high);
+      border-radius: var(--rounded-full);
+      overflow: hidden;
+      padding: 2px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--tertiary);
+      border-radius: var(--rounded-full);
+      transition: width var(--dur-long) var(--ease-bounce);
+    }
+
+    .progress-fill--pink {
+      background: var(--primary);
+    }
+
+    /* Buttons & Pills */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--rounded-full);
+      border: 2px solid transparent;
+      font-weight: 700;
+      font-size: var(--body-size);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  box-shadow var(--dur-short) var(--ease-out),
+                  background-color var(--dur-micro) var(--ease-out);
+    }
+
+    .btn:hover:not(:disabled) {
+      transform: var(--pop-scale);
+    }
+
+    .btn:active:not(:disabled) {
+      transform: scale(0.97);
+    }
+
+    .btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--on-primary);
+      box-shadow: var(--shadow-pink);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      box-shadow: var(--shadow-pink-deep);
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+      color: var(--on-secondary);
+      box-shadow: var(--shadow-grape);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      box-shadow: var(--shadow-grape-deep);
+    }
+
+    .btn-soft {
+      background: var(--surface-container);
+      color: var(--on-surface);
+      border-color: var(--outline-variant);
+    }
+
+    .btn-soft:hover:not(:disabled) {
+      background: var(--surface-container-high);
+      border-color: var(--outline);
+    }
+
+    .btn-quiet {
+      background: transparent;
+      color: var(--primary);
+      padding: var(--space-sm) var(--space-md);
+    }
+
+    .btn-quiet:hover:not(:disabled) {
+      background: var(--surface-container);
+    }
+
+    .btn-sm {
+      min-height: 40px;
+      padding: var(--space-xs) var(--space-md);
+      font-size: 0.875rem;
+    }
+
+    /* Badges & Tags */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      font-size: var(--label-size);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+    }
+
+    .tag-grape {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      font-size: var(--label-size);
+      font-weight: 700;
+      border: 2px solid var(--secondary);
+      color: var(--secondary);
+      background: var(--surface-container-low);
+    }
+
+    .tag-positive {
+      background: var(--positive-container);
+      color: var(--positive);
+      border-color: transparent;
+    }
+
+    .tag-locked {
+      background: var(--surface-container-high);
+      color: var(--on-surface-variant);
+      border-color: transparent;
+    }
+
+    /* Mini-Guía / Study Drawer */
+    .guide-drawer {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-grape);
+      padding: var(--space-lg);
+      display: none;
+    }
+
+    .guide-drawer.is-open {
+      display: block;
+      animation: popIn var(--dur-long) var(--ease-bounce);
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    .guide-card {
+      background: var(--surface-container);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .guide-card h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--on-surface);
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .vocab-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+
+    .vocab-pill {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-full);
+      padding: var(--space-xs) var(--space-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--on-surface);
+      box-shadow: var(--shadow-sky);
+    }
+
+    .vocab-pill span {
+      color: var(--on-surface-variant);
+      font-weight: 400;
+    }
+
+    /* Stage Map Cards */
+    .section-header-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .stages-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+
+    .stage-card {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-pink);
+      border: 3px solid transparent;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      text-align: left;
+      cursor: pointer;
+      position: relative;
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  box-shadow var(--dur-short) var(--ease-out),
+                  border-color var(--dur-short) var(--ease-out);
+    }
+
+    .stage-card:nth-child(3n+2) { box-shadow: var(--shadow-sky); }
+    .stage-card:nth-child(3n+3) { box-shadow: var(--shadow-grape); }
+
+    .stage-card:hover:not(:disabled) {
+      transform: var(--lift);
+    }
+
+    .stage-card.is-active {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-pink-deep);
+    }
+
+    .stage-card.is-locked {
+      background: var(--surface-container);
+      box-shadow: none;
+      cursor: not-allowed;
+      opacity: 0.78;
+    }
+
+    .stage-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .stage-title {
+      font-weight: 800;
+      font-size: 1.08rem;
+      line-height: 1.25;
+      color: var(--on-surface);
+      margin: 0;
+    }
+
+    .stage-desc {
+      margin: 0;
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+      flex-grow: 1;
+    }
+
+    .stage-stars {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      color: var(--warning);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .stage-star-empty {
+      color: var(--outline-variant);
+    }
+
+    /* Active Quiz Workspace */
+    .quiz-workspace {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-pink);
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .quiz-topbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .quiz-progress-wrap {
+      flex: 1 1 240px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .quiz-meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .streak-pill {
+      background: var(--warning-container);
+      color: var(--warning);
+      border-radius: var(--rounded-full);
+      padding: var(--space-xs) var(--space-md);
+      font-size: 0.85rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    /* Question Body Container Query */
+    .question-stage-wrap {
+      container-type: inline-size;
+    }
+
+    .question-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    @container (max-width: 640px) {
+      .question-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+    }
+
+    .illustration-well {
+      background: var(--surface-container);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      min-height: 200px;
+      position: relative;
+    }
+
+    .animal-svg {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      display: block;
+    }
+
+    .illustration-caption {
+      font-size: var(--label-size);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--on-surface-variant);
+    }
+
+    .question-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .question-instruction {
+      margin: 0;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    .question-prompt-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .question-prompt {
+      margin: 0;
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.6rem);
+      line-height: 1.3;
+      color: var(--on-surface);
+    }
+
+    .hint-box {
+      background: var(--tertiary-container);
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-md);
+      font-size: 0.92rem;
+      color: var(--on-surface);
+      display: none;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .hint-box.is-visible {
+      display: flex;
+      animation: popIn var(--dur-short) var(--ease-bounce);
+    }
+
+    /* Options Grid (A, B, C, D) */
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      min-height: 58px;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded-full);
+      background: var(--surface-container);
+      border: 2px solid var(--outline-variant);
+      color: var(--on-surface);
+      font-size: 1.02rem;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  background-color var(--dur-micro) var(--ease-out),
+                  border-color var(--dur-micro) var(--ease-out),
+                  box-shadow var(--dur-short) var(--ease-out);
+    }
+
+    .option-btn:hover:not(:disabled) {
+      transform: var(--pop-scale);
+      background: var(--surface-container-high);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-pink);
+    }
+
+    .option-btn:active:not(:disabled) {
+      transform: scale(0.98);
+    }
+
+    .option-btn:disabled {
+      cursor: default;
+    }
+
+    .option-letter {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: var(--rounded-full);
+      background: var(--surface-container-low);
+      color: var(--secondary);
+      border: 2px solid var(--outline-variant);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .option-btn.is-correct {
+      background: var(--positive-container);
+      border-color: var(--positive);
+      color: var(--on-surface);
+      box-shadow: var(--shadow-positive);
+    }
+
+    .option-btn.is-correct .option-letter {
+      background: var(--positive);
+      color: var(--on-positive);
+      border-color: var(--positive);
+    }
+
+    .option-btn.is-wrong {
+      background: var(--error-container);
+      border-color: var(--error);
+      color: var(--on-surface);
+    }
+
+    .option-btn.is-wrong .option-letter {
+      background: var(--error);
+      color: var(--on-error);
+      border-color: var(--error);
+    }
+
+    /* Immediate Feedback Banner */
+    .feedback-banner {
+      border-radius: var(--rounded);
+      padding: var(--space-lg);
+      display: none;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .feedback-banner.is-visible {
+      display: flex;
+      animation: popIn var(--dur-short) var(--ease-bounce);
+    }
+
+    .feedback-banner--positive {
+      background: var(--positive-container);
+      box-shadow: var(--shadow-positive);
+    }
+
+    .feedback-banner--error {
+      background: var(--error-container);
+      box-shadow: var(--shadow-pink);
+    }
+
+    .feedback-text-group {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .feedback-title {
+      margin: 0;
+      font-weight: 900;
+      font-size: 1.12rem;
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .feedback-banner--positive .feedback-title { color: var(--positive); }
+    .feedback-banner--error .feedback-title { color: var(--error); }
+
+    .feedback-detail {
+      margin: 0;
+      color: var(--on-surface);
+      font-size: 0.96rem;
+    }
+
+    /* Stage Summary Screen */
+    .summary-card {
+      display: none;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .summary-card.is-visible {
+      display: flex;
+      animation: popIn var(--dur-long) var(--ease-bounce);
+    }
+
+    .summary-hero {
+      background: var(--surface-container);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-lg);
+    }
+
+    .summary-score-big {
+      font-weight: 900;
+      font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+      color: var(--primary);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .review-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: var(--space-sm);
+    }
+
+    .review-item {
+      background: var(--surface-container);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      font-size: 0.9rem;
+    }
+
+    .review-icon-ok { color: var(--positive); flex-shrink: 0; margin-top: 2px; }
+    .review-icon-no { color: var(--error); flex-shrink: 0; margin-top: 2px; }
+
+    /* Footer */
+    .source-footer {
+      text-align: left;
+      color: var(--on-surface-variant);
+      font-size: 0.85rem;
+      padding-bottom: var(--space-lg);
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.96) translateY(8px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* Mobile & Tablet Breakpoints */
+    @media (max-width: 900px) {
+      .hero-panel {
+        grid-template-columns: 1fr;
+      }
+      .stages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-grid {
+        padding: var(--space-md);
+        gap: var(--space-md);
+      }
+      .hero-panel,
+      .quiz-workspace {
+        padding: var(--space-lg);
+      }
+      .stages-grid,
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+      .scoreboard-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-grid">
+
+    <!-- Cabecera y Marcador de Puntos -->
+    <header class="hero-panel">
+      <div class="hero-intro">
+        <span class="badge">
+          <i data-lucide="sparkles" aria-hidden="true"></i>
+          Inglés · 3º de Educación Primaria
+        </span>
+        <h1 class="display">Misión <em>Animal</em> Kingdom</h1>
+        <p class="hero-subtitle">
+          Supera las 4 etapas desbloqueables sobre partes del cuerpo, adjetivos descriptivos y las estructuras <strong>has got / hasn't got</strong> y <strong>Has it got…?</strong>
+        </p>
+        <div class="hero-actions">
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-toggle-guide" onclick="toggleStudyGuide()">
+            <i data-lucide="book-open" aria-hidden="true"></i>
+            Mini-guía de repaso
+          </button>
+          <button type="button" class="btn btn-soft btn-sm" id="btn-reset-progress" onclick="handleResetClick(this)">
+            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+            Reiniciar progreso
+          </button>
+        </div>
+      </div>
+
+      <div class="scoreboard-grid" aria-label="Marcador del explorador">
+        <div class="stat-card">
+          <span class="label-kicker">Estrellas</span>
+          <div class="stat-value tabular-nums" id="stat-stars">0 / 12 ★</div>
+          <span class="stat-caption">3 ★ por etapa perfecta</span>
+        </div>
+        <div class="stat-card">
+          <span class="label-kicker">Puntuación</span>
+          <div class="stat-value stat-value--grape tabular-nums" id="stat-points">0 pts</div>
+          <span class="stat-caption" id="stat-rank">Aprendiz Curioso</span>
+        </div>
+        <div class="stat-card stat-card--wide">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:var(--space-sm);">
+            <span class="label-kicker">Progreso de la aventura</span>
+            <span class="tabular-nums" style="font-weight:800; font-size:0.9rem;" id="stat-progress-text">0 de 4 etapas</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="global-progress-bar">
+            <div class="progress-fill" id="global-progress-fill"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mini-guía de repaso (plegable) -->
+    <section class="guide-drawer" id="study-guide" aria-label="Mini-guía de vocabulario y gramática">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:var(--space-md); flex-wrap:wrap;">
+        <div>
+          <span class="label-kicker">Chuleta rápida antes de jugar</span>
+          <h2 class="section-title">Vocabulario y gramática de las fichas</h2>
+        </div>
+        <button type="button" class="btn btn-quiet btn-sm" onclick="toggleStudyGuide()">
+          Cerrar guía
+        </button>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <h3><i data-lucide="paw-print" aria-hidden="true"></i> Partes del cuerpo (Body Parts)</h3>
+          <div class="vocab-chips">
+            <span class="vocab-pill">head <span>(cabeza)</span></span>
+            <span class="vocab-pill">eyes <span>(ojos)</span></span>
+            <span class="vocab-pill">teeth <span>(dientes)</span></span>
+            <span class="vocab-pill">beak <span>(pico)</span></span>
+            <span class="vocab-pill">wings <span>(alas)</span></span>
+            <span class="vocab-pill">claws <span>(garras)</span></span>
+            <span class="vocab-pill">tail <span>(cola)</span></span>
+            <span class="vocab-pill">shell <span>(caparazón)</span></span>
+          </div>
+        </div>
+        <div class="guide-card">
+          <h3><i data-lucide="ruler" aria-hidden="true"></i> Adjetivos (Adjectives)</h3>
+          <div class="vocab-chips">
+            <span class="vocab-pill">big <span>(grande)</span></span>
+            <span class="vocab-pill">small <span>(pequeño)</span></span>
+            <span class="vocab-pill">fast <span>(rápido)</span></span>
+            <span class="vocab-pill">slow <span>(lento)</span></span>
+            <span class="vocab-pill">long <span>(largo)</span></span>
+            <span class="vocab-pill">short <span>(corto)</span></span>
+          </div>
+        </div>
+        <div class="guide-card">
+          <h3><i data-lucide="message-circle-question" aria-hidden="true"></i> Gramática (has got / Has it got…?)</h3>
+          <div class="vocab-chips">
+            <span class="vocab-pill">It has got… <span>(Tiene…)</span></span>
+            <span class="vocab-pill">It hasn't got… <span>(No tiene…)</span></span>
+            <span class="vocab-pill">Has it got…? <span>(¿Tiene…?)</span></span>
+            <span class="vocab-pill">Yes, it has. <span>(Sí)</span></span>
+            <span class="vocab-pill">No, it hasn't. <span>(No)</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selector de Etapas Desbloqueables -->
+    <section aria-label="Etapas desbloqueables">
+      <div class="section-header-row">
+        <div>
+          <span class="label-kicker">Mapa de niveles</span>
+          <h2 class="section-title">Elige tu etapa</h2>
+        </div>
+        <span style="font-size:0.9rem; color:var(--on-surface-variant); font-weight:500;">
+          Consigue al menos <strong>5 de 8 aciertos</strong> para desbloquear la siguiente etapa.
+        </span>
+      </div>
+      <div class="stages-grid" id="stages-grid"></div>
+    </section>
+
+    <!-- Zona Activa del Juego -->
+    <main class="quiz-workspace" id="quiz-workspace" aria-live="polite">
+
+      <!-- Vista de Pregunta -->
+      <div id="quiz-active-view" style="display:flex; flex-direction:column; gap:var(--space-lg);">
+        <div class="quiz-topbar">
+          <div class="quiz-progress-wrap">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:var(--space-sm);">
+              <span class="label-kicker" id="stage-kicker">Etapa 1 · Body Parts</span>
+              <span class="tabular-nums" style="font-weight:800; font-size:0.9rem;" id="question-counter">Pregunta 1 de 8</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill progress-fill--pink" id="stage-progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="quiz-meta-pills">
+            <span class="streak-pill tabular-nums" id="streak-badge">
+              <i data-lucide="flame" aria-hidden="true"></i>
+              Racha: 0
+            </span>
+            <button type="button" class="btn btn-soft btn-sm" id="btn-hint" onclick="showHint()">
+              <i data-lucide="lightbulb" aria-hidden="true"></i>
+              Pista
+            </button>
+          </div>
+        </div>
+
+        <div class="question-stage-wrap">
+          <div class="question-layout">
+            <div class="illustration-well" id="illustration-well">
+              <div id="animal-illustration"></div>
+              <span class="illustration-caption" id="animal-caption">Animal</span>
+            </div>
+
+            <div class="question-content">
+              <p class="question-instruction" id="question-instruction">Observa el dibujo y elige la opción correcta:</p>
+              <div class="question-prompt-row">
+                <h3 class="question-prompt" id="question-prompt">Loading…</h3>
+                <button type="button" class="btn btn-quiet btn-sm" id="btn-speak" onclick="speakCurrentPrompt()" aria-label="Escuchar pronunciación en inglés" title="Escuchar en inglés">
+                  <i data-lucide="volume-2" aria-hidden="true"></i>
+                  Escuchar
+                </button>
+              </div>
+
+              <div class="hint-box" id="hint-box" role="note">
+                <i data-lucide="sparkles" aria-hidden="true" style="color:var(--secondary); flex-shrink:0;"></i>
+                <span id="hint-text"></span>
+              </div>
+
+              <div class="options-grid" id="options-grid" role="group" aria-label="Opciones de respuesta"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Retroalimentación Inmediata -->
+        <div class="feedback-banner" id="feedback-banner" role="status">
+          <div class="feedback-text-group">
+            <h4 class="feedback-title" id="feedback-title">¡Genial!</h4>
+            <p class="feedback-detail" id="feedback-detail"></p>
+          </div>
+          <button type="button" class="btn btn-primary" id="btn-next" onclick="nextQuestion()">
+            Siguiente pregunta
+            <i data-lucide="arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Vista de Resumen de Etapa -->
+      <div class="summary-card" id="stage-summary-view">
+        <div class="summary-hero">
+          <div style="display:flex; flex-direction:column; gap:var(--space-xs);">
+            <span class="badge" id="summary-badge">Etapa completada</span>
+            <h3 class="section-title" id="summary-title">¡Buen trabajo!</h3>
+            <p style="margin:0; color:var(--on-surface-variant);" id="summary-message"></p>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:var(--space-xs);">
+            <div class="summary-score-big tabular-nums" id="summary-score">0 / 8</div>
+            <div class="stage-stars" id="summary-stars" style="font-size:1.25rem;"></div>
+          </div>
+        </div>
+
+        <div>
+          <span class="label-kicker" style="margin-bottom:var(--space-sm);">Repaso de tus respuestas</span>
+          <div class="review-list" id="summary-review-list"></div>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-md); justify-content:flex-end;">
+          <button type="button" class="btn btn-soft" onclick="retryCurrentStage()">
+            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+            Repetir esta etapa
+          </button>
+          <button type="button" class="btn btn-primary" id="btn-go-next-stage" onclick="goToNextStage()">
+            Ir a la siguiente etapa
+            <i data-lucide="arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="source-footer">
+      Contenidos basados en las fichas de Inglés de 3º de Educación Primaria (Animal Kingdom: partes del cuerpo, adjetivos descriptivos, <em>has got / hasn't got</em> y <em>Has it got…?</em>).
+    </footer>
+  </div>
+
+  <api-shim></api-shim>
+
+  <script>
+    /* =========================================================================
+       1. BANCO DE ETAPAS Y PREGUNTAS (32 preguntas, 8 por etapa)
+       Distribución equitativa EXACTA de letras correctas (A=0, B=1, C=2, D=3):
+       Cada etapa tiene exactamente 2xA, 2xB, 2xC y 2xD.
+       ========================================================================= */
+    const LETTERS = [`A`, `B`, `C`, `D`];
+    const PASS_SCORE = 5;
+
+    const STAGES = [
+      {
+        id: 0,
+        number: 1,
+        title: `Partes del cuerpo`,
+        englishTag: `Body Parts`,
+        description: `Identifica head, teeth, wings, claws, tail, shell, eyes y beak.`,
+        questions: [
+          {
+            animal: `crocodile`,
+            highlight: `teeth`,
+            caption: `Crocodile · Parte señalada`,
+            instruction: `Observa la parte señalada en el cocodrilo y elige la palabra correcta:`,
+            prompt: `A crocodile has got very sharp white ___.`,
+            speakText: `A crocodile has got very sharp white teeth.`,
+            options: [`wings`, `shell`, `teeth`, `ears`],
+            correct: 2,
+            hint: `Sirven para masticar y morder. En español son los "dientes".`,
+            feedbackOk: `¡Genial! "Teeth" significa dientes. ¡El cocodrilo tiene muchos!`,
+            feedbackNo: `La respuesta correcta es C) teeth (dientes). "Wings" son alas y "shell" es caparazón.`
+          },
+          {
+            animal: `eagle`,
+            highlight: `wings`,
+            caption: `Eagle · Parte señalada`,
+            instruction: `Mira el dibujo del águila. ¿Qué usa para volar?`,
+            prompt: `An eagle can fly high because it has got two big ___.`,
+            speakText: `An eagle can fly high because it has got two big wings.`,
+            options: [`wings`, `claws`, `tail`, `shell`],
+            correct: 0,
+            hint: `Las aves las abren para volar por el cielo.`,
+            feedbackOk: `¡Fantástico! "Wings" son las alas.`,
+            feedbackNo: `Es A) wings (alas). Recuerda que "claws" son garras y "tail" es cola.`
+          },
+          {
+            animal: `turtle`,
+            highlight: `shell`,
+            caption: `Turtle · Parte señalada`,
+            instruction: `Fíjate en lo que lleva la tortuga en la espalda:`,
+            prompt: `The turtle protects its body with a hard ___.`,
+            speakText: `The turtle protects its body with a hard shell.`,
+            options: [`tail`, `beak`, `eyes`, `shell`],
+            correct: 3,
+            hint: `Es su "casita" dura de la espalda: el caparazón.`,
+            feedbackOk: `¡Exacto! "Shell" es el caparazón duro de la tortuga.`,
+            feedbackNo: `¡Casi! La correcta es D) shell (caparazón).`
+          },
+          {
+            animal: `lion`,
+            highlight: `claws`,
+            caption: `Lion · Parte señalada`,
+            instruction: `Observa las patas del león. ¿Cómo se llaman sus uñas afiladas?`,
+            prompt: `A lion has got sharp ___ on its paws.`,
+            speakText: `A lion has got sharp claws on its paws.`,
+            options: [`eyes`, `claws`, `head`, `wings`],
+            correct: 1,
+            hint: `Empieza por "c" y en español significa "garras".`,
+            feedbackOk: `¡Muy bien! "Claws" significa garras.`,
+            feedbackNo: `La correcta es B) claws (garras). "Eyes" son ojos y "head" es cabeza.`
+          },
+          {
+            animal: `monkey`,
+            highlight: `tail`,
+            caption: `Monkey · Parte señalada`,
+            instruction: `Este mono usa una parte larga de atrás para sujetarse a las ramas:`,
+            prompt: `This monkey has got a very long ___.`,
+            speakText: `This monkey has got a very long tail.`,
+            options: [`head`, `tail`, `shell`, `beak`],
+            correct: 1,
+            hint: `Está al final del cuerpo; en español es la "cola".`,
+            feedbackOk: `¡Perfecto! "Tail" significa cola.`,
+            feedbackNo: `Era B) tail (cola). "Beak" es pico y "head" es cabeza.`
+          },
+          {
+            animal: `owl`,
+            highlight: `eyes`,
+            caption: `Owl · Parte señalada`,
+            instruction: `El búho ve muy bien de noche gracias a esta parte de su cara:`,
+            prompt: `An owl has got two big round ___.`,
+            speakText: `An owl has got two big round eyes.`,
+            options: [`teeth`, `claws`, `wings`, `eyes`],
+            correct: 3,
+            hint: `Todos los animales los tienen en la cara para poder ver.`,
+            feedbackOk: `¡Clavado! "Eyes" significa ojos.`,
+            feedbackNo: `La respuesta correcta es D) eyes (ojos).`
+          },
+          {
+            animal: `parrot`,
+            highlight: `beak`,
+            caption: `Parrot · Parte señalada`,
+            instruction: `Los pájaros no tienen dientes; ¿con qué comen los loros?`,
+            prompt: `A parrot eats seeds and fruit with its ___.`,
+            speakText: `A parrot eats seeds and fruit with its beak.`,
+            options: [`beak`, `tail`, `shell`, `claws`],
+            correct: 0,
+            hint: `Es la boca dura y puntiaguda de las aves: el "pico".`,
+            feedbackOk: `¡Bravo! "Beak" es el pico del loro.`,
+            feedbackNo: `Es A) beak (pico). Las aves usan el pico para comer.`
+          },
+          {
+            animal: `lion`,
+            highlight: `head`,
+            caption: `Lion · Parte señalada`,
+            instruction: `¿En qué parte del cuerpo están los ojos, las orejas y la boca?`,
+            prompt: `A lion has got a big ___ with a lot of hair.`,
+            speakText: `A lion has got a big head with a lot of hair.`,
+            options: [`tail`, `wings`, `head`, `legs`],
+            correct: 2,
+            hint: `Es la parte superior o delantera donde está la cara: la "cabeza".`,
+            feedbackOk: `¡Súper bien! "Head" significa cabeza.`,
+            feedbackNo: `La correcta es C) head (cabeza). ¡Ya dominas las partes del cuerpo!`
+          }
+        ]
+      },
+      {
+        id: 1,
+        number: 2,
+        title: `Adjetivos de la selva`,
+        englishTag: `Adjectives`,
+        description: `Describe animales con big, small, fast, slow, long y short.`,
+        questions: [
+          {
+            animal: `elephant`,
+            highlight: `none`,
+            caption: `Elephant · Tamaño`,
+            instruction: `¿Qué adjetivo describe el tamaño de un elefante?`,
+            prompt: `An elephant is very ___.`,
+            speakText: `An elephant is very big.`,
+            options: [`small`, `big`, `short`, `slow`],
+            correct: 1,
+            hint: `Es lo contrario de "small" (pequeño).`,
+            feedbackOk: `¡Genial! "Big" significa grande, como el elefante.`,
+            feedbackNo: `La respuesta es B) big (grande). "Small" significa pequeño.`
+          },
+          {
+            animal: `cheetah`,
+            highlight: `none`,
+            caption: `Cheetah · Velocidad`,
+            instruction: `El guepardo es el animal terrestre más veloz del mundo:`,
+            prompt: `A cheetah can run at 100 km/h! It is very ___.`,
+            speakText: `A cheetah can run at 100 kilometers per hour. It is very fast.`,
+            options: [`slow`, `short`, `small`, `fast`],
+            correct: 3,
+            hint: `Significa "rápido" o "veloz".`,
+            feedbackOk: `¡Veloz como un guepardo! "Fast" significa rápido.`,
+            feedbackNo: `La correcta es D) fast (rápido). "Slow" significa lento.`
+          },
+          {
+            animal: `turtle`,
+            highlight: `none`,
+            caption: `Turtle · Velocidad`,
+            instruction: `La tortuga camina pasito a pasito sin ninguna prisa:`,
+            prompt: `A turtle walks very calmly. A turtle is ___.`,
+            speakText: `A turtle walks very calmly. A turtle is slow.`,
+            options: [`slow`, `fast`, `big`, `long`],
+            correct: 0,
+            hint: `Es lo contrario de "fast" (rápido).`,
+            feedbackOk: `¡Muy bien! "Slow" significa lento.`,
+            feedbackNo: `Era A) slow (lento). Recuerda: fast = rápido, slow = lento.`
+          },
+          {
+            animal: `snake`,
+            highlight: `none`,
+            caption: `Snake · Longitud`,
+            instruction: `Observa la forma del cuerpo de la serpiente:`,
+            prompt: `Look at the snake! Its body is very ___.`,
+            speakText: `Look at the snake! Its body is very long.`,
+            options: [`short`, `small`, `long`, `fast`],
+            correct: 2,
+            hint: `Desde la cabeza hasta la punta de la cola mide mucho: "largo".`,
+            feedbackOk: `¡Estupendo! "Long" significa largo.`,
+            feedbackNo: `La respuesta es C) long (largo). "Short" es corto.`
+          },
+          {
+            animal: `rabbit`,
+            highlight: `tail`,
+            caption: `Rabbit · Cola`,
+            instruction: `Fíjate en la colita redonda del conejo:`,
+            prompt: `A rabbit has got a ___ tail.`,
+            speakText: `A rabbit has got a short tail.`,
+            options: [`long`, `fast`, `big`, `short`],
+            correct: 3,
+            hint: `Es lo contrario de "long" (largo): "corto/a".`,
+            feedbackOk: `¡Exacto! "Short" significa corto. ¡El conejo tiene una cola cortita!`,
+            feedbackNo: `Era D) short (corto). El mono tiene una "long tail" y el conejo una "short tail".`
+          },
+          {
+            animal: `mouse`,
+            highlight: `none`,
+            caption: `Mouse · Tamaño`,
+            instruction: `Un ratón cabe en la palma de la mano. ¿Cómo es?`,
+            prompt: `A mouse isn't big. A mouse is ___.`,
+            speakText: `A mouse isn't big. A mouse is small.`,
+            options: [`big`, `small`, `long`, `tall`],
+            correct: 1,
+            hint: `En español significa "pequeño".`,
+            feedbackOk: `¡Perfecto! "Small" significa pequeño.`,
+            feedbackNo: `La respuesta correcta es B) small (pequeño).`
+          },
+          {
+            animal: `giraffe`,
+            highlight: `neck`,
+            caption: `Giraffe · Cuello`,
+            instruction: `La jirafa llega a las hojas más altas de los árboles porque…`,
+            prompt: `A giraffe has got a ___ neck.`,
+            speakText: `A giraffe has got a long neck.`,
+            options: [`short`, `slow`, `long`, `small`],
+            correct: 2,
+            hint: `Su cuello mide casi dos metros, ¡es muy largo!`,
+            feedbackOk: `¡Bien hecho! "A long neck" es un cuello largo.`,
+            feedbackNo: `Es C) long (largo). La jirafa tiene un cuello muy largo.`
+          },
+          {
+            animal: `cheetah`,
+            highlight: `none`,
+            caption: `Opposites · Contrarios`,
+            instruction: `Elige la palabra opuesta (contraria) a la que aparece entre comillas:`,
+            prompt: `What is the opposite of "fast"?`,
+            speakText: `What is the opposite of fast?`,
+            options: [`slow`, `big`, `long`, `small`],
+            correct: 0,
+            hint: `Si algo no es rápido ("fast"), entonces es…`,
+            feedbackOk: `¡Campeón! Lo contrario de "fast" (rápido) es "slow" (lento).`,
+            feedbackNo: `La respuesta es A) slow (lento). Recuerda las parejas: big/small, fast/slow, long/short.`
+          }
+        ]
+      },
+      {
+        id: 2,
+        number: 3,
+        title: `¿Tiene o no tiene?`,
+        englishTag: `has got / hasn't got`,
+        description: `Practica frases afirmativas y negativas con has got y hasn't got.`,
+        questions: [
+          {
+            animal: `turtle`,
+            highlight: `shell`,
+            caption: `Turtle · Gramática`,
+            instruction: `Completa la frase observando el dibujo de la tortuga:`,
+            prompt: `A turtle ___ a hard shell.`,
+            speakText: `A turtle has got a hard shell.`,
+            options: [`hasn't got`, `haven't got`, `have got`, `has got`],
+            correct: 3,
+            hint: `La tortuga SÍ tiene caparazón, y es un solo animal (singular).`,
+            feedbackOk: `¡Muy bien! Usamos "has got" porque sí tiene y hablamos de un animal.`,
+            feedbackNo: `La correcta es D) has got. Con un animal (it / a turtle) en afirmativa siempre va "has got".`
+          },
+          {
+            animal: `snake`,
+            highlight: `none`,
+            caption: `Snake · Gramática`,
+            instruction: `Mira bien a la serpiente: ¿tiene patas?`,
+            prompt: `A snake ___ legs.`,
+            speakText: `A snake hasn't got legs.`,
+            options: [`has got`, `hasn't got`, `have got`, `is got`],
+            correct: 1,
+            hint: `Las serpientes se arrastran porque NO tienen patas.`,
+            feedbackOk: `¡Genial! "Hasn't got" significa "no tiene".`,
+            feedbackNo: `La respuesta es B) hasn't got (no tiene). Las serpientes no tienen patas (legs).`
+          },
+          {
+            animal: `fish`,
+            highlight: `none`,
+            caption: `Fish · Verdadero o falso`,
+            instruction: `Lee con cuidado y elige la frase VERDADERA sobre el pez:`,
+            prompt: `Which sentence is TRUE about a fish?`,
+            speakText: `Which sentence is true about a fish?`,
+            options: [
+              `A fish has got wings.`,
+              `A fish has got claws.`,
+              `A fish hasn't got wings.`,
+              `A fish hasn't got eyes.`
+            ],
+            correct: 2,
+            hint: `Los peces nadan en el agua, así que NO tienen alas.`,
+            feedbackOk: `¡Exacto! Un pez tiene ojos y aletas, pero "hasn't got wings" (no tiene alas).`,
+            feedbackNo: `La única frase verdadera es C) A fish hasn't got wings (Un pez no tiene alas).`
+          },
+          {
+            animal: `lion`,
+            highlight: `teeth`,
+            caption: `Lion · Verdadero o falso`,
+            instruction: `Elige la descripción VERDADERA sobre el león:`,
+            prompt: `Which sentence is TRUE about a lion?`,
+            speakText: `Which sentence is true about a lion?`,
+            options: [
+              `A lion has got sharp teeth.`,
+              `A lion hasn't got a tail.`,
+              `A lion has got a shell.`,
+              `A lion has got wings.`
+            ],
+            correct: 0,
+            hint: `Piensa en la boca del león: tiene dientes muy afilados.`,
+            feedbackOk: `¡Estupendo! El león "has got sharp teeth" (tiene dientes afilados).`,
+            feedbackNo: `Es A) A lion has got sharp teeth. No tiene caparazón ni alas.`
+          },
+          {
+            animal: `elephant`,
+            highlight: `ears`,
+            caption: `Elephant · Descripción`,
+            instruction: `Completa la descripción del elefante:`,
+            prompt: `An elephant ___ big ears and a long trunk.`,
+            speakText: `An elephant has got big ears and a long trunk.`,
+            options: [`hasn't got`, `haven't got`, `has got`, `are got`],
+            correct: 2,
+            hint: `El elefante SÍ tiene orejas grandes y una trompa larga.`,
+            feedbackOk: `¡Bravo! "An elephant has got big ears…" está perfecto.`,
+            feedbackNo: `La correcta es C) has got. Con un solo animal (an elephant) usamos "has got".`
+          },
+          {
+            animal: `parrot`,
+            highlight: `beak`,
+            caption: `Parrot · Gramática`,
+            instruction: `Completa esta frase sobre los loros y las aves:`,
+            prompt: `A parrot ___ teeth, it has got a beak!`,
+            speakText: `A parrot hasn't got teeth, it has got a beak!`,
+            options: [`hasn't got`, `has got`, `have got`, `got`],
+            correct: 0,
+            hint: `Los pájaros NO tienen dientes; tienen pico.`,
+            feedbackOk: `¡Clavado! "A parrot hasn't got teeth" (no tiene dientes).`,
+            feedbackNo: `La respuesta es A) hasn't got porque los loros no tienen dientes.`
+          },
+          {
+            animal: `crocodile`,
+            highlight: `tail`,
+            caption: `Crocodile · Descripción`,
+            instruction: `¿Qué frase describe CORRECTAMENTE al cocodrilo?`,
+            prompt: `Choose the CORRECT description for a crocodile:`,
+            speakText: `Choose the correct description for a crocodile.`,
+            options: [
+              `It hasn't got a tail.`,
+              `It has got a long tail and big teeth.`,
+              `It has got two wings.`,
+              `It hasn't got eyes.`
+            ],
+            correct: 1,
+            hint: `Fíjate en su cola larga y su boca llena de dientes.`,
+            feedbackOk: `¡Fantástico! Tiene cola larga y dientes grandes.`,
+            feedbackNo: `La correcta es B) It has got a long tail and big teeth.`
+          },
+          {
+            animal: `rabbit`,
+            highlight: `tail`,
+            caption: `Rabbit · Contraste`,
+            instruction: `Completa la segunda parte de la frase sobre el conejo:`,
+            prompt: `A rabbit has got long ears, but it ___ a long tail.`,
+            speakText: `A rabbit has got long ears, but it hasn't got a long tail.`,
+            options: [`has got`, `have got`, `isn't got`, `hasn't got`],
+            correct: 3,
+            hint: `"But" significa "pero": tiene orejas largas, pero NO tiene cola larga.`,
+            feedbackOk: `¡Súper! "It hasn't got a long tail" (no tiene una cola larga).`,
+            feedbackNo: `Era D) hasn't got. Recuerda que para negar con "it" decimos "hasn't got", nunca "isn't got".`
+          }
+        ]
+      },
+      {
+        id: 3,
+        number: 4,
+        title: `El Detective Animal`,
+        englishTag: `Has it got…?`,
+        description: `Domina las preguntas con Has it got…?, Yes/No y adivinanzas finales.`,
+        questions: [
+          {
+            animal: `lion`,
+            highlight: `claws`,
+            caption: `Pregunta · Orden`,
+            instruction: `¿Cómo se ordena una pregunta para saber si un león tiene garras?`,
+            prompt: `Choose the correct question:`,
+            speakText: `Has a lion got claws?`,
+            options: [
+              `Has a lion got claws?`,
+              `A lion has got claws?`,
+              `Have a lion got claws?`,
+              `Got a lion has claws?`
+            ],
+            correct: 0,
+            hint: `En las preguntas en inglés, "Has" pasa al principio delante del animal.`,
+            feedbackOk: `¡Perfecto! Siempre empezamos la pregunta con "Has": Has a lion got claws?`,
+            feedbackNo: `La estructura correcta es A) Has a lion got claws? ("Has" + animal + "got").`
+          },
+          {
+            animal: `eagle`,
+            highlight: `wings`,
+            caption: `Respuesta corta`,
+            instruction: `Mira el dibujo del águila y responde en inglés:`,
+            prompt: `Has an eagle got wings?`,
+            speakText: `Has an eagle got wings?`,
+            options: [`No, it hasn't.`, `Yes, it hasn't.`, `Yes, it has.`, `No, it has.`],
+            correct: 2,
+            hint: `El águila SÍ tiene alas. En respuesta corta afirmativa decimos "Yes, it has."`,
+            feedbackOk: `¡Genial! "Yes, it has." es la respuesta corta correcta.`,
+            feedbackNo: `La respuesta correcta es C) Yes, it has. Nunca mezclamos "Yes" con "hasn't".`
+          },
+          {
+            animal: `snake`,
+            highlight: `none`,
+            caption: `Respuesta corta`,
+            instruction: `Observa a la serpiente y contesta la pregunta:`,
+            prompt: `Has a snake got claws?`,
+            speakText: `Has a snake got claws?`,
+            options: [`Yes, it has.`, `No, it hasn't.`, `Yes, I have.`, `No, it have.`],
+            correct: 1,
+            hint: `La serpiente NO tiene garras ni patas.`,
+            feedbackOk: `¡Muy bien! "No, it hasn't."`,
+            feedbackNo: `La respuesta es B) No, it hasn't. (No, no tiene).`
+          },
+          {
+            animal: `turtle`,
+            highlight: `shell`,
+            caption: `Respuesta corta`,
+            instruction: `Mira a la tortuga y elige la respuesta correcta:`,
+            prompt: `Has a turtle got a shell?`,
+            speakText: `Has a turtle got a shell?`,
+            options: [`No, it hasn't.`, `Yes, she has.`, `No, it has.`, `Yes, it has.`],
+            correct: 3,
+            hint: `Para animales usamos el pronombre "it", y la tortuga sí tiene caparazón.`,
+            feedbackOk: `¡Exacto! "Yes, it has."`,
+            feedbackNo: `La correcta es D) Yes, it has.`
+          },
+          {
+            animal: `mystery`,
+            highlight: `none`,
+            caption: `Adivinanza 1`,
+            instruction: `Lee las pistas de detective y adivina qué animal es:`,
+            prompt: `It is green and long. It has got sharp teeth and a long tail. Has it got wings? No, it hasn't. What is it?`,
+            speakText: `It is green and long. It has got sharp teeth and a long tail. Has it got wings? No, it hasn't. What is it?`,
+            options: [`A crocodile`, `An eagle`, `A turtle`, `A rabbit`],
+            correct: 0,
+            hint: `Es verde, largo, con dientes afilados y cola larga…`,
+            feedbackOk: `¡Misterio resuelto! Es A crocodile (un cocodrilo).`,
+            feedbackNo: `¡Era A) A crocodile! La tortuga tiene caparazón pero no dientes afilados.`
+          },
+          {
+            animal: `mystery`,
+            highlight: `none`,
+            caption: `Adivinanza 2`,
+            instruction: `Lee las pistas con atención y descubre al animal:`,
+            prompt: `It is very big and grey. It has got big ears. Has it got a short nose? No, it hasn't! What is it?`,
+            speakText: `It is very big and grey. It has got big ears. Has it got a short nose? No, it hasn't! What is it?`,
+            options: [`A snake`, `A parrot`, `A cheetah`, `An elephant`],
+            correct: 3,
+            hint: `Grande, gris, orejas enormes y nariz nada corta (¡tiene trompa!).`,
+            feedbackOk: `¡Magnífico! Es D) An elephant (un elefante).`,
+            feedbackNo: `La respuesta era D) An elephant.`
+          },
+          {
+            animal: `rabbit`,
+            highlight: `ears`,
+            caption: `Completa la pregunta`,
+            instruction: `Elige la palabra que falta al inicio de la pregunta:`,
+            prompt: `___ a rabbit got long ears? — Yes, it has.`,
+            speakText: `Has a rabbit got long ears? Yes, it has.`,
+            options: [`Have`, `Hasn't`, `Has`, `Is`],
+            correct: 2,
+            hint: `Fíjate en la respuesta: "Yes, it HAS." ¡Eso te da la pista!`,
+            feedbackOk: `¡Perfecto! Preguntamos con "Has": Has a rabbit got long ears?`,
+            feedbackNo: `La palabra que falta es C) Has. Cuando preguntamos por un animal usamos "Has".`
+          },
+          {
+            animal: `mystery`,
+            highlight: `none`,
+            caption: `Reto final`,
+            instruction: `Última adivinanza para convertirte en Maestro Animal Kingdom:`,
+            prompt: `It is small and fast. It has got two wings and a beak. Has it got fur? No, it hasn't. What is it?`,
+            speakText: `It is small and fast. It has got two wings and a beak. Has it got fur? No, it hasn't. What is it?`,
+            options: [`A lion`, `A parrot`, `A turtle`, `A mouse`],
+            correct: 1,
+            hint: `Tiene dos alas ("wings") y un pico ("beak").`,
+            feedbackOk: `¡ENHORABUENA! Es B) A parrot. ¡Has completado el reto final!`,
+            feedbackNo: `Era B) A parrot (un loro), porque tiene alas y pico.`
+          }
+        ]
+      }
+    ];
+
+    /* =========================================================================
+       2. ILUSTRACIONES SVG ORIGINALES DE ANIMALES (100% vectoriales, tokens CSS)
+       ========================================================================= */
+    function getAnimalSvg(animal, highlight) {
+      const hRing = function(cx, cy, r) {
+        return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--primary)" stroke-width="4" stroke-dasharray="6 4" />`;
+      };
+
+      switch (animal) {
+        case `crocodile`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <ellipse cx="115" cy="110" rx="68" ry="26" fill="var(--animal-green)" />
+            <path d="M48 112 Q16 116 14 96 Q30 104 52 102 Z" fill="var(--animal-green-dark)" />
+            <rect x="145" y="84" width="76" height="34" rx="14" fill="var(--animal-green)" />
+            <rect x="150" y="106" width="70" height="12" rx="6" fill="var(--animal-green-dark)" />
+            <polygon points="164,106 169,116 174,106" fill="var(--surface-container-low)" />
+            <polygon points="178,106 183,116 188,106" fill="var(--surface-container-low)" />
+            <polygon points="192,106 197,116 202,106" fill="var(--surface-container-low)" />
+            <polygon points="206,106 211,116 216,106" fill="var(--surface-container-low)" />
+            <circle cx="162" cy="84" r="10" fill="var(--animal-green)" />
+            <circle cx="162" cy="84" r="5" fill="var(--surface-container-low)" />
+            <circle cx="163" cy="84" r="2.5" fill="var(--on-surface)" />
+            <rect x="76" y="128" width="16" height="18" rx="6" fill="var(--animal-green-dark)" />
+            <rect x="136" y="128" width="16" height="18" rx="6" fill="var(--animal-green-dark)" />
+            ${highlight === `teeth` ? hRing(190, 111, 28) : ``}
+            ${highlight === `tail` ? hRing(32, 106, 24) : ``}
+          </svg>`;
+
+        case `eagle`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <path d="M120 82 Q60 20 20 55 Q48 92 95 96 Z" fill="var(--animal-brown)" />
+            <path d="M120 82 Q180 20 220 55 Q192 92 145 96 Z" fill="var(--animal-brown)" />
+            <ellipse cx="120" cy="96" rx="24" ry="34" fill="var(--animal-brown-light)" />
+            <circle cx="120" cy="56" r="20" fill="var(--surface-container-low)" />
+            <polygon points="120,56 142,63 120,68" fill="var(--animal-gold)" />
+            <circle cx="114" cy="53" r="3.5" fill="var(--on-surface)" />
+            <path d="M108 128 L102 142 M112 128 L112 142 M132 128 L128 142 M136 128 L142 142" stroke="var(--animal-gold)" stroke-width="4" stroke-linecap="round" />
+            ${highlight === `wings` ? hRing(56, 62, 34) : ``}
+          </svg>`;
+
+        case `turtle`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <path d="M52 110 C52 54, 168 54, 168 110 Z" fill="var(--animal-teal)" />
+            <path d="M72 105 C78 74, 142 74, 148 105 Z" fill="var(--animal-green)" />
+            <circle cx="186" cy="96" r="18" fill="var(--animal-green)" />
+            <circle cx="192" cy="92" r="3.5" fill="var(--on-surface)" />
+            <path d="M185 104 Q192 107 198 103" fill="none" stroke="var(--on-surface)" stroke-width="2.5" stroke-linecap="round" />
+            <rect x="64" y="110" width="22" height="24" rx="9" fill="var(--animal-green-dark)" />
+            <rect x="134" y="110" width="22" height="24" rx="9" fill="var(--animal-green-dark)" />
+            <polygon points="52,106 34,112 52,116" fill="var(--animal-green)" />
+            ${highlight === `shell` ? hRing(110, 82, 42) : ``}
+          </svg>`;
+
+        case `lion`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <ellipse cx="140" cy="108" rx="44" ry="28" fill="var(--animal-gold)" />
+            <path d="M180 104 Q212 90 214 68" fill="none" stroke="var(--animal-gold)" stroke-width="6" stroke-linecap="round" />
+            <circle cx="215" cy="64" r="8" fill="var(--animal-brown)" />
+            <circle cx="90" cy="74" r="36" fill="var(--animal-brown)" />
+            <circle cx="90" cy="74" r="24" fill="var(--animal-gold-light)" />
+            <circle cx="72" cy="52" r="8" fill="var(--animal-gold)" />
+            <circle cx="108" cy="52" r="8" fill="var(--animal-gold)" />
+            <circle cx="81" cy="71" r="3.5" fill="var(--on-surface)" />
+            <circle cx="99" cy="71" r="3.5" fill="var(--on-surface)" />
+            <polygon points="86,80 94,80 90,85" fill="var(--animal-brown)" />
+            <rect x="100" y="122" width="18" height="26" rx="8" fill="var(--animal-gold)" />
+            <rect x="152" y="122" width="18" height="26" rx="8" fill="var(--animal-gold)" />
+            <path d="M98 148 L94 155 M105 148 L104 155 M112 148 L113 155" stroke="var(--surface-container-low)" stroke-width="3" stroke-linecap="round" />
+            ${highlight === `claws` ? hRing(106, 148, 18) : ``}
+            ${highlight === `teeth` ? hRing(90, 86, 18) : ``}
+            ${highlight === `head` ? hRing(90, 74, 42) : ``}
+          </svg>`;
+
+        case `monkey`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <path d="M150 112 Q208 118 206 72 Q204 48 184 56" fill="none" stroke="var(--animal-brown)" stroke-width="9" stroke-linecap="round" />
+            <ellipse cx="122" cy="106" rx="30" ry="34" fill="var(--animal-brown)" />
+            <ellipse cx="122" cy="110" rx="18" ry="22" fill="var(--animal-brown-light)" />
+            <circle cx="86" cy="60" r="11" fill="var(--animal-brown-light)" />
+            <circle cx="158" cy="60" r="11" fill="var(--animal-brown-light)" />
+            <circle cx="122" cy="62" r="28" fill="var(--animal-brown)" />
+            <ellipse cx="122" cy="68" rx="20" ry="16" fill="var(--animal-brown-light)" />
+            <circle cx="112" cy="58" r="3.5" fill="var(--on-surface)" />
+            <circle cx="132" cy="58" r="3.5" fill="var(--on-surface)" />
+            <path d="M114 74 Q122 81 130 74" fill="none" stroke="var(--on-surface)" stroke-width="2.5" stroke-linecap="round" />
+            ${highlight === `tail` ? hRing(194, 86, 30) : ``}
+          </svg>`;
+
+        case `owl`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <ellipse cx="120" cy="96" rx="44" ry="50" fill="var(--secondary)" />
+            <ellipse cx="120" cy="108" rx="28" ry="30" fill="var(--surface-container)" />
+            <polygon points="84,54 96,42 104,58" fill="var(--secondary)" />
+            <polygon points="156,54 144,42 136,58" fill="var(--secondary)" />
+            <circle cx="102" cy="70" r="16" fill="var(--surface-container-low)" />
+            <circle cx="138" cy="70" r="16" fill="var(--surface-container-low)" />
+            <circle cx="102" cy="70" r="7" fill="var(--on-surface)" />
+            <circle cx="138" cy="70" r="7" fill="var(--on-surface)" />
+            <polygon points="115,78 125,78 120,89" fill="var(--animal-gold)" />
+            ${highlight === `eyes` ? hRing(120, 70, 38) : ``}
+          </svg>`;
+
+        case `parrot`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <ellipse cx="116" cy="98" rx="30" ry="42" fill="var(--animal-coral)" />
+            <path d="M90 84 Q70 112 96 132 Z" fill="var(--tertiary)" />
+            <circle cx="120" cy="54" r="24" fill="var(--animal-coral)" />
+            <circle cx="128" cy="50" r="8" fill="var(--surface-container-low)" />
+            <circle cx="130" cy="50" r="3.5" fill="var(--on-surface)" />
+            <path d="M142 50 Q168 52 158 70 Q144 68 140 60 Z" fill="var(--animal-gold)" />
+            <rect x="108" y="138" width="16" height="14" rx="4" fill="var(--animal-gold)" />
+            ${highlight === `beak` ? hRing(152, 58, 18) : ``}
+          </svg>`;
+
+        case `elephant`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <ellipse cx="106" cy="100" rx="54" ry="38" fill="var(--animal-slate)" />
+            <ellipse cx="134" cy="76" rx="28" ry="32" fill="var(--animal-slate-light)" />
+            <circle cx="158" cy="76" r="28" fill="var(--animal-slate)" />
+            <path d="M180 80 Q208 88 202 124 Q198 136 186 132" fill="none" stroke="var(--animal-slate)" stroke-width="14" stroke-linecap="round" />
+            <circle cx="164" cy="68" r="4" fill="var(--on-surface)" />
+            <rect x="70" y="124" width="20" height="28" rx="8" fill="var(--animal-slate)" />
+            <rect x="122" y="124" width="20" height="28" rx="8" fill="var(--animal-slate)" />
+            ${highlight === `ears` ? hRing(134, 76, 34) : ``}
+          </svg>`;
+
+        case `cheetah`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <path d="M40 100 Q20 80 34 62" fill="none" stroke="var(--animal-gold)" stroke-width="7" stroke-linecap="round" />
+            <ellipse cx="116" cy="96" rx="56" ry="24" fill="var(--animal-gold)" />
+            <circle cx="176" cy="70" r="20" fill="var(--animal-gold)" />
+            <circle cx="168" cy="52" r="6" fill="var(--animal-gold)" />
+            <circle cx="182" cy="66" r="3" fill="var(--on-surface)" />
+            <circle cx="96" cy="92" r="4" fill="var(--on-surface)" />
+            <circle cx="116" cy="88" r="4" fill="var(--on-surface)" />
+            <circle cx="136" cy="96" r="4" fill="var(--on-surface)" />
+            <circle cx="106" cy="106" r="4" fill="var(--on-surface)" />
+            <path d="M78 114 L56 146 M102 114 L118 146 M136 114 L126 146 M156 114 L182 146" stroke="var(--animal-gold)" stroke-width="9" stroke-linecap="round" />
+            <path d="M22 128 L52 128 M16 140 L44 140" stroke="var(--tertiary)" stroke-width="4" stroke-linecap="round" />
+          </svg>`;
+
+        case `snake`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <path d="M28 124 Q58 78 96 116 Q134 148 164 96 Q180 68 202 74" fill="none" stroke="var(--animal-green)" stroke-width="18" stroke-linecap="round" />
+            <ellipse cx="204" cy="74" rx="18" ry="13" fill="var(--animal-green-dark)" />
+            <circle cx="208" cy="69" r="3.5" fill="var(--surface-container-low)" />
+            <circle cx="209" cy="69" r="1.8" fill="var(--on-surface)" />
+            <path d="M221 76 L232 72 M221 76 L232 82" stroke="var(--animal-coral)" stroke-width="2.5" stroke-linecap="round" />
+          </svg>`;
+
+        case `rabbit`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <ellipse cx="122" cy="112" rx="36" ry="28" fill="var(--surface-container-low)" stroke="var(--outline-variant)" stroke-width="3" />
+            <circle cx="84" cy="118" r="11" fill="var(--surface-container-low)" stroke="var(--outline-variant)" stroke-width="3" />
+            <ellipse cx="144" cy="44" rx="9" ry="28" fill="var(--surface-container-low)" stroke="var(--outline-variant)" stroke-width="3" />
+            <ellipse cx="144" cy="46" rx="4" ry="18" fill="var(--primary-container)" />
+            <ellipse cx="162" cy="46" rx="9" ry="26" fill="var(--surface-container-low)" stroke="var(--outline-variant)" stroke-width="3" />
+            <circle cx="152" cy="80" r="24" fill="var(--surface-container-low)" stroke="var(--outline-variant)" stroke-width="3" />
+            <circle cx="160" cy="76" r="3.5" fill="var(--on-surface)" />
+            <circle cx="174" cy="82" r="4" fill="var(--primary)" />
+            ${highlight === `tail` ? hRing(84, 118, 18) : ``}
+            ${highlight === `ears` ? hRing(153, 44, 28) : ``}
+          </svg>`;
+
+        case `mouse`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <path d="M74 122 Q40 120 38 98" fill="none" stroke="var(--primary-container)" stroke-width="4" stroke-linecap="round" />
+            <ellipse cx="118" cy="112" rx="42" ry="24" fill="var(--animal-slate-light)" />
+            <circle cx="136" cy="86" r="14" fill="var(--animal-slate-light)" />
+            <circle cx="136" cy="86" r="8" fill="var(--primary-container)" />
+            <circle cx="156" cy="108" r="3.5" fill="var(--on-surface)" />
+            <circle cx="166" cy="114" r="4" fill="var(--primary)" />
+          </svg>`;
+
+        case `giraffe`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <ellipse cx="102" cy="114" rx="36" ry="22" fill="var(--animal-gold)" />
+            <rect x="122" y="34" width="18" height="76" rx="8" fill="var(--animal-gold)" />
+            <ellipse cx="138" cy="34" rx="18" ry="11" fill="var(--animal-gold)" />
+            <circle cx="144" cy="31" r="3" fill="var(--on-surface)" />
+            <circle cx="130" cy="64" r="5" fill="var(--animal-brown)" />
+            <circle cx="132" cy="86" r="5" fill="var(--animal-brown)" />
+            <circle cx="96" cy="112" r="6" fill="var(--animal-brown)" />
+            <rect x="78" y="128" width="10" height="28" rx="4" fill="var(--animal-gold)" />
+            <rect x="116" y="128" width="10" height="28" rx="4" fill="var(--animal-gold)" />
+            ${highlight === `neck` ? hRing(131, 72, 28) : ``}
+          </svg>`;
+
+        case `fish`:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <polygon points="56,84 22,56 22,112" fill="var(--tertiary)" />
+            <ellipse cx="122" cy="84" rx="64" ry="36" fill="var(--tertiary)" />
+            <polygon points="108,48 134,30 144,50" fill="var(--animal-gold)" />
+            <circle cx="162" cy="76" r="7" fill="var(--surface-container-low)" />
+            <circle cx="164" cy="76" r="3.5" fill="var(--on-surface)" />
+            <path d="M170 94 Q178 98 184 92" fill="none" stroke="var(--on-surface)" stroke-width="2.5" stroke-linecap="round" />
+            <circle cx="204" cy="54" r="6" fill="var(--tertiary-container)" stroke="var(--tertiary)" stroke-width="2" />
+            <circle cx="214" cy="38" r="4" fill="var(--tertiary-container)" stroke="var(--tertiary)" stroke-width="2" />
+          </svg>`;
+
+        default:
+          return `<svg class="animal-svg" viewBox="0 0 240 165" aria-hidden="true">
+            <circle cx="120" cy="82" r="52" fill="var(--secondary-container)" />
+            <circle cx="120" cy="82" r="36" fill="var(--surface-container-low)" />
+            <text x="120" y="96" text-anchor="middle" font-size="44" font-weight="900" fill="var(--primary)">?</text>
+          </svg>`;
+      }
+    }
+
+    /* =========================================================================
+       3. ESTADO DE LA APLICACIÓN Y PERSISTENCIA (notebookAppApi)
+       ========================================================================= */
+    let appState = {
+      unlockedStage: 0,
+      activeStage: 0,
+      currentQuestion: 0,
+      streak: 0,
+      stageScores: [null, null, null, null],
+      stageStars: [0, 0, 0, 0],
+      currentAnswers: []
+    };
+
+    let hasAnsweredCurrent = false;
+    let guideOpen = false;
+
+    function computeStars(score) {
+      if (score === null || score === undefined) return 0;
+      if (score >= 8) return 3;
+      if (score >= 7) return 2;
+      if (score >= PASS_SCORE) return 1;
+      return 0;
+    }
+
+    function getTotalStars() {
+      return appState.stageStars.reduce(function(acc, val) { return acc + (val || 0); }, 0);
+    }
+
+    function getTotalPoints() {
+      return appState.stageScores.reduce(function(acc, s) {
+        return acc + (typeof s === `number` ? s * 10 : 0);
+      }, 0);
+    }
+
+    function getRankName(stars) {
+      if (stars >= 11) return `Maestro Animal Kingdom`;
+      if (stars >= 7) return `Guardián de la Selva`;
+      if (stars >= 3) return `Rastreador de Huellas`;
+      return `Aprendiz Curioso`;
+    }
+
+    async function saveState() {
+      if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === `function`) {
+        try {
+          await window.notebookAppApi.setAppState(appState);
+        } catch (err) {
+          /* Ignore storage errors gracefully in preview */
+        }
+      }
+    }
+
+    async function loadInitialState() {
+      if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === `function`) {
+        try {
+          const saved = await window.notebookAppApi.getAppState();
+          if (saved && typeof saved === `object`) {
+            appState = {
+              unlockedStage: typeof saved.unlockedStage === `number` ? saved.unlockedStage : 0,
+              activeStage: typeof saved.activeStage === `number` ? saved.activeStage : 0,
+              currentQuestion: typeof saved.currentQuestion === `number` ? saved.currentQuestion : 0,
+              streak: typeof saved.streak === `number` ? saved.streak : 0,
+              stageScores: Array.isArray(saved.stageScores) && saved.stageScores.length === 4 ? saved.stageScores : [null, null, null, null],
+              stageStars: Array.isArray(saved.stageStars) && saved.stageStars.length === 4 ? saved.stageStars : [0, 0, 0, 0],
+              currentAnswers: Array.isArray(saved.currentAnswers) ? saved.currentAnswers : []
+            };
+          }
+        } catch (err) {
+          /* Fallback to default fresh state */
+        }
+      }
+    }
+
+    /* =========================================================================
+       4. RENDERIZADO DE UI
+       ========================================================================= */
+    function refreshIcons() {
+      if (typeof lucide !== `undefined` && lucide && typeof lucide.createIcons === `function`) {
+        lucide.createIcons();
+      }
+    }
+
+    function renderScoreboard() {
+      const totalStars = getTotalStars();
+      const totalPoints = getTotalPoints();
+      const completedCount = appState.stageScores.filter(function(s) {
+        return typeof s === `number` && s >= PASS_SCORE;
+      }).length;
+      const pct = Math.round((completedCount / STAGES.length) * 100);
+
+      const elStars = document.getElementById(`stat-stars`);
+      const elPoints = document.getElementById(`stat-points`);
+      const elRank = document.getElementById(`stat-rank`);
+      const elProgressText = document.getElementById(`stat-progress-text`);
+      const elProgressBar = document.getElementById(`global-progress-bar`);
+      const elProgressFill = document.getElementById(`global-progress-fill`);
+
+      if (elStars) elStars.textContent = `${totalStars} / 12 ★`;
+      if (elPoints) elPoints.textContent = `${totalPoints} pts`;
+      if (elRank) elRank.textContent = getRankName(totalStars);
+      if (elProgressText) elProgressText.textContent = `${completedCount} de 4 etapas`;
+      if (elProgressBar) elProgressBar.setAttribute(`aria-valuenow`, String(pct));
+      if (elProgressFill) elProgressFill.style.width = `${pct}%`;
+    }
+
+    function renderStagesGrid() {
+      const grid = document.getElementById(`stages-grid`);
+      if (!grid) return;
+
+      grid.innerHTML = STAGES.map(function(stage) {
+        const isLocked = stage.id > appState.unlockedStage;
+        const isActive = stage.id === appState.activeStage;
+        const stars = appState.stageStars[stage.id] || 0;
+        const bestScore = appState.stageScores[stage.id];
+        const isPassed = typeof bestScore === `number` && bestScore >= PASS_SCORE;
+
+        let statusTag = `<span class="tag-grape">Disponible</span>`;
+        if (isLocked) {
+          statusTag = `<span class="tag-grape tag-locked"><i data-lucide="lock" aria-hidden="true" style="width:14px;height:14px;"></i> Bloqueada</span>`;
+        } else if (isPassed) {
+          statusTag = `<span class="tag-grape tag-positive"><i data-lucide="check" aria-hidden="true" style="width:14px;height:14px;"></i> Superada (${bestScore}/8)</span>`;
+        }
+
+        let starHtml = ``;
+        for (let i = 1; i <= 3; i++) {
+          starHtml += i <= stars
+            ? `<span>★</span>`
+            : `<span class="stage-star-empty">★</span>`;
+        }
+
+        return `
+          <button type="button"
+            class="stage-card ${isActive ? `is-active` : ``} ${isLocked ? `is-locked` : ``}"
+            ${isLocked ? `disabled` : ``}
+            onclick="selectStage(${stage.id})"
+            aria-label="Etapa ${stage.number}: ${stage.title}">
+            <div class="stage-card-top">
+              <span class="label-kicker">Etapa ${stage.number}</span>
+              ${statusTag}
+            </div>
+            <h3 class="stage-title">${stage.title}</h3>
+            <p class="stage-desc">${stage.description}</p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:var(--space-xs);">
+              <span style="font-size:0.8rem; font-weight:700; color:var(--secondary);">${stage.englishTag}</span>
+              <span class="stage-stars" aria-label="${stars} de 3 estrellas">${starHtml}</span>
+            </div>
+          </button>
+        `;
+      }).join(``);
+    }
+
+    function renderQuestionView() {
+      const activeView = document.getElementById(`quiz-active-view`);
+      const summaryView = document.getElementById(`stage-summary-view`);
+      if (!activeView || !summaryView) return;
+
+      const stage = STAGES[appState.activeStage];
+      if (!stage) return;
+
+      if (appState.currentQuestion >= stage.questions.length) {
+        activeView.style.display = `none`;
+        summaryView.classList.add(`is-visible`);
+        renderSummaryView();
+        return;
+      }
+
+      activeView.style.display = `flex`;
+      summaryView.classList.remove(`is-visible`);
+
+      const q = stage.questions[appState.currentQuestion];
+      hasAnsweredCurrent = false;
+
+      const kicker = document.getElementById(`stage-kicker`);
+      const counter = document.getElementById(`question-counter`);
+      const fill = document.getElementById(`stage-progress-fill`);
+      const streakBadge = document.getElementById(`streak-badge`);
+      const illustration = document.getElementById(`animal-illustration`);
+      const caption = document.getElementById(`animal-caption`);
+      const instruction = document.getElementById(`question-instruction`);
+      const prompt = document.getElementById(`question-prompt`);
+      const hintBox = document.getElementById(`hint-box`);
+      const hintText = document.getElementById(`hint-text`);
+      const btnHint = document.getElementById(`btn-hint`);
+      const optionsGrid = document.getElementById(`options-grid`);
+      const feedbackBanner = document.getElementById(`feedback-banner`);
+      const btnSpeak = document.getElementById(`btn-speak`);
+
+      if (kicker) kicker.textContent = `Etapa ${stage.number} · ${stage.englishTag}`;
+      if (counter) counter.textContent = `Pregunta ${appState.currentQuestion + 1} de ${stage.questions.length}`;
+      if (fill) {
+        const qPct = Math.round(((appState.currentQuestion) / stage.questions.length) * 100);
+        fill.style.width = `${qPct}%`;
+      }
+      if (streakBadge) {
+        streakBadge.innerHTML = `<i data-lucide="flame" aria-hidden="true"></i> Racha: ${appState.streak}`;
+      }
+      if (illustration) illustration.innerHTML = getAnimalSvg(q.animal, q.highlight);
+      if (caption) caption.textContent = q.caption;
+      if (instruction) instruction.textContent = q.instruction;
+      if (prompt) prompt.textContent = q.prompt;
+      if (hintBox) hintBox.classList.remove(`is-visible`);
+      if (hintText) hintText.textContent = q.hint;
+      if (btnHint) btnHint.disabled = false;
+      if (feedbackBanner) {
+        feedbackBanner.classList.remove(`is-visible`, `feedback-banner--positive`, `feedback-banner--error`);
+      }
+
+      if (btnSpeak) {
+        const hasSpeech = typeof window !== `undefined` && `speechSynthesis` in window;
+        btnSpeak.style.display = hasSpeech ? `inline-flex` : `none`;
+      }
+
+      if (optionsGrid) {
+        optionsGrid.innerHTML = q.options.map(function(opt, idx) {
+          return `
+            <button type="button" class="option-btn" data-opt-index="${idx}" onclick="selectOption(${idx})">
+              <span class="option-letter">${LETTERS[idx]}</span>
+              <span>${opt}</span>
+            </button>
+          `;
+        }).join(``);
+      }
+
+      refreshIcons();
+    }
+
+    function renderSummaryView() {
+      const stage = STAGES[appState.activeStage];
+      if (!stage) return;
+
+      const answers = appState.currentAnswers;
+      const score = answers.filter(function(a) { return a.isCorrect; }).length;
+      const stars = computeStars(score);
+      const passed = score >= PASS_SCORE;
+
+      const badge = document.getElementById(`summary-badge`);
+      const title = document.getElementById(`summary-title`);
+      const msg = document.getElementById(`summary-message`);
+      const scoreEl = document.getElementById(`summary-score`);
+      const starsEl = document.getElementById(`summary-stars`);
+      const reviewList = document.getElementById(`summary-review-list`);
+      const btnNextStage = document.getElementById(`btn-go-next-stage`);
+
+      if (scoreEl) scoreEl.textContent = `${score} / ${stage.questions.length}`;
+      if (starsEl) {
+        let html = ``;
+        for (let i = 1; i <= 3; i++) {
+          html += i <= stars ? `<span>★</span>` : `<span class="stage-star-empty">★</span>`;
+        }
+        starsEl.innerHTML = html;
+      }
+
+      if (badge) {
+        badge.textContent = passed ? `¡Etapa ${stage.number} superada!` : `¡Sigue practicando!`;
+      }
+      if (title) {
+        if (score === 8) title.textContent = `¡Puntuación perfecta, explorador!`;
+        else if (passed) title.textContent = `¡Muy buen trabajo en ${stage.title}!`;
+        else title.textContent = `Te faltó muy poquito para desbloquear`;
+      }
+      if (msg) {
+        if (passed && stage.id < STAGES.length - 1) {
+          msg.textContent = `Has conseguido ${score} aciertos y has desbloqueado la Etapa ${stage.number + 1}.`;
+        } else if (passed && stage.id === STAGES.length - 1) {
+          msg.textContent = `¡Has completado las 4 etapas de Animal Kingdom! Ya eres un experto en inglés.`;
+        } else {
+          msg.textContent = `Necesitas al menos ${PASS_SCORE} aciertos para desbloquear la siguiente etapa. ¡Repasa las pistas e inténtalo de nuevo!`;
+        }
+      }
+
+      if (btnNextStage) {
+        const hasNext = stage.id < STAGES.length - 1 && appState.unlockedStage > stage.id;
+        btnNextStage.style.display = hasNext ? `inline-flex` : `none`;
+        if (hasNext) {
+          btnNextStage.innerHTML = `Ir a la Etapa ${stage.number + 1} <i data-lucide="arrow-right" aria-hidden="true"></i>`;
+        }
+      }
+
+      if (reviewList) {
+        reviewList.innerHTML = stage.questions.map(function(q, idx) {
+          const ans = answers[idx];
+          const ok = ans && ans.isCorrect;
+          const chosenLetter = ans ? LETTERS[ans.chosenIndex] : `-`;
+          const rightLetter = LETTERS[q.correct];
+          return `
+            <div class="review-item">
+              <i data-lucide="${ok ? `check-circle-2` : `x-circle`}" class="${ok ? `review-icon-ok` : `review-icon-no`}" aria-hidden="true"></i>
+              <div>
+                <div style="font-weight:700;">${idx + 1}. ${q.prompt}</div>
+                <div style="color:var(--on-surface-variant);">
+                  ${ok
+                    ? `Correcto: <strong>${rightLetter}) ${q.options[q.correct]}</strong>`
+                    : `Elegiste ${chosenLetter} · Correcta: <strong>${rightLetter}) ${q.options[q.correct]}</strong>`
+                  }
+                </div>
+              </div>
+            </div>
+          `;
+        }).join(``);
+      }
+
+      refreshIcons();
+    }
+
+    /* =========================================================================
+       5. MANEJADORES DE INTERACCIÓN (Declaraciones `function` hoisted)
+       ========================================================================= */
+    function toggleStudyGuide() {
+      const drawer = document.getElementById(`study-guide`);
+      const btn = document.getElementById(`btn-toggle-guide`);
+      if (!drawer) return;
+      guideOpen = !guideOpen;
+      drawer.classList.toggle(`is-open`, guideOpen);
+      if (btn) {
+        btn.innerHTML = guideOpen
+          ? `<i data-lucide="book-open" aria-hidden="true"></i> Ocultar mini-guía`
+          : `<i data-lucide="book-open" aria-hidden="true"></i> Mini-guía de repaso`;
+      }
+      refreshIcons();
+    }
+
+    function showHint() {
+      const hintBox = document.getElementById(`hint-box`);
+      const btnHint = document.getElementById(`btn-hint`);
+      if (hintBox) hintBox.classList.add(`is-visible`);
+      if (btnHint) btnHint.disabled = true;
+    }
+
+    function speakCurrentPrompt() {
+      if (typeof window === `undefined` || !(`speechSynthesis` in window)) return;
+      const stage = STAGES[appState.activeStage];
+      if (!stage) return;
+      const q = stage.questions[appState.currentQuestion];
+      if (!q) return;
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(q.speakText || q.prompt);
+      utter.lang = `en-GB`;
+      utter.rate = 0.88;
+      window.speechSynthesis.speak(utter);
+    }
+
+    async function selectOption(chosenIndex) {
+      if (hasAnsweredCurrent) return;
+      const stage = STAGES[appState.activeStage];
+      if (!stage) return;
+      const q = stage.questions[appState.currentQuestion];
+      if (!q) return;
+
+      hasAnsweredCurrent = true;
+      const isCorrect = chosenIndex === q.correct;
+
+      if (isCorrect) {
+        appState.streak += 1;
+      } else {
+        appState.streak = 0;
+      }
+
+      appState.currentAnswers.push({
+        questionIndex: appState.currentQuestion,
+        chosenIndex: chosenIndex,
+        isCorrect: isCorrect
+      });
+
+      const buttons = document.querySelectorAll(`.option-btn`);
+      buttons.forEach(function(btn) {
+        btn.disabled = true;
+        const idx = Number(btn.getAttribute(`data-opt-index`));
+        if (idx === q.correct) {
+          btn.classList.add(`is-correct`);
+        } else if (idx === chosenIndex && !isCorrect) {
+          btn.classList.add(`is-wrong`);
+        }
+      });
+
+      const streakBadge = document.getElementById(`streak-badge`);
+      if (streakBadge) {
+        streakBadge.innerHTML = `<i data-lucide="flame" aria-hidden="true"></i> Racha: ${appState.streak}`;
+      }
+
+      const banner = document.getElementById(`feedback-banner`);
+      const fTitle = document.getElementById(`feedback-title`);
+      const fDetail = document.getElementById(`feedback-detail`);
+      const btnNext = document.getElementById(`btn-next`);
+
+      if (banner && fTitle && fDetail) {
+        banner.classList.remove(`feedback-banner--positive`, `feedback-banner--error`);
+        banner.classList.add(isCorrect ? `feedback-banner--positive` : `feedback-banner--error`, `is-visible`);
+        fTitle.innerHTML = isCorrect
+          ? `<i data-lucide="sparkles" aria-hidden="true"></i> ¡Muy bien! +10 puntos`
+          : `<i data-lucide="heart-handshake" aria-hidden="true"></i> ¡Casi! Fíjate en la respuesta verde`;
+        fDetail.textContent = isCorrect ? q.feedbackOk : q.feedbackNo;
+      }
+
+      if (btnNext) {
+        const isLast = appState.currentQuestion === stage.questions.length - 1;
+        btnNext.innerHTML = isLast
+          ? `Ver resultado de la etapa <i data-lucide="trophy" aria-hidden="true"></i>`
+          : `Siguiente pregunta <i data-lucide="arrow-right" aria-hidden="true"></i>`;
+      }
+
+      const fill = document.getElementById(`stage-progress-fill`);
+      if (fill) {
+        const qPct = Math.round(((appState.currentQuestion + 1) / stage.questions.length) * 100);
+        fill.style.width = `${qPct}%`;
+      }
+
+      /* Si es la última pregunta, consolidamos la puntuación de la etapa */
+      if (appState.currentQuestion === stage.questions.length - 1) {
+        const score = appState.currentAnswers.filter(function(a) { return a.isCorrect; }).length;
+        const prevBest = appState.stageScores[stage.id];
+        if (prevBest === null || score > prevBest) {
+          appState.stageScores[stage.id] = score;
+          appState.stageStars[stage.id] = computeStars(score);
+        }
+        if (score >= PASS_SCORE && appState.unlockedStage === stage.id && stage.id < STAGES.length - 1) {
+          appState.unlockedStage = stage.id + 1;
+        }
+        renderScoreboard();
+        renderStagesGrid();
+      }
+
+      refreshIcons();
+      await saveState();
+    }
+
+    async function nextQuestion() {
+      const stage = STAGES[appState.activeStage];
+      if (!stage) return;
+      appState.currentQuestion += 1;
+      await saveState();
+      renderQuestionView();
+    }
+
+    async function selectStage(stageId) {
+      if (stageId > appState.unlockedStage) return;
+      appState.activeStage = stageId;
+      appState.currentQuestion = 0;
+      appState.currentAnswers = [];
+      await saveState();
+      renderStagesGrid();
+      renderQuestionView();
+      const workspace = document.getElementById(`quiz-workspace`);
+      if (workspace && typeof workspace.scrollIntoView === `function`) {
+        workspace.scrollIntoView({ behavior: `smooth`, block: `nearest` });
+      }
+    }
+
+    async function retryCurrentStage() {
+      appState.currentQuestion = 0;
+      appState.currentAnswers = [];
+      await saveState();
+      renderQuestionView();
+    }
+
+    async function goToNextStage() {
+      const nextId = appState.activeStage + 1;
+      if (nextId < STAGES.length && nextId <= appState.unlockedStage) {
+        await selectStage(nextId);
+      }
+    }
+
+    async function handleResetClick(btn) {
+      if (!btn) return;
+      if (btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        btn.innerHTML = `<i data-lucide="alert-triangle" aria-hidden="true"></i> ¿Seguro? Pulsa otra vez`;
+        refreshIcons();
+        setTimeout(function() {
+          if (btn.dataset.armed === `true`) {
+            btn.dataset.armed = `false`;
+            btn.innerHTML = `<i data-lucide="rotate-ccw" aria-hidden="true"></i> Reiniciar progreso`;
+            refreshIcons();
+          }
+        }, 4000);
+        return;
+      }
+
+      btn.dataset.armed = `false`;
+      btn.innerHTML = `<i data-lucide="rotate-ccw" aria-hidden="true"></i> Reiniciar progreso`;
+
+      appState = {
+        unlockedStage: 0,
+        activeStage: 0,
+        currentQuestion: 0,
+        streak: 0,
+        stageScores: [null, null, null, null],
+        stageStars: [0, 0, 0, 0],
+        currentAnswers: []
+      };
+
+      await saveState();
+      renderScoreboard();
+      renderStagesGrid();
+      renderQuestionView();
+    }
+
+    /* =========================================================================
+       6. INICIALIZACIÓN
+       ========================================================================= */
+    async function initApp() {
+      await loadInitialState();
+      renderScoreboard();
+      renderStagesGrid();
+      renderQuestionView();
+      refreshIcons();
+      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === `function`) {
+        window.notebookAppApi.notifyAppReady();
+      }
+    }
+
+    document.addEventListener(`DOMContentLoaded`, initApp);
+  </script>
+</body>
+</html>
